@@ -1,0 +1,8 @@
+enable inbound port 8080 on ec2
+cd /etc/yum.repos.d/
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum install jenkins -y
+service jenkins start
+service jenkins status
+hit public_ip:8080
